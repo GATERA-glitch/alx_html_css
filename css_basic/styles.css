@@ -44,3 +44,15 @@ header, footer {
     background-color: #ccc;
     text-align: center;
 }
+/* Responsive layout for small screens */
+@media screen and (max-width: 768px) {
+    body.works_on_smartphone main {
+        flex-direction: column; /* stack article and aside vertically */
+    }
+
+    body.works_on_smartphone article,
+    body.works_on_smartphone aside {
+        flex: auto;             /* take full width */
+        width: 100%;
+    }
+}
