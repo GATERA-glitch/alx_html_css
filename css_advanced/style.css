@@ -1,206 +1,84 @@
 /* =========================
-   :root — Design Tokens
+   Quote Section
 ========================= */
-:root {
-  /* Layout Sizes */
-  --dl-size-xxsmall: 16px;
-  --dl-size-xsmall: 16px;
-  --dl-size-small: 48px;
-  --dl-size-medium: 96px;
-  --dl-size-large: 144px;
-  --dl-size-xlarge: 192px;
-  --dl-size-xxlarge: 288px;
-  --dl-max-width: 1400px;
 
-  /* Space */
-  --dl-space-half: 8px;
-  --dl-space-one: 16px;
-  --dl-space-one-and-half: 24px;
-  --dl-space-two: 32px;
-  --dl-space-three: 48px;
-  --dl-space-four: 64px;
-  --dl-space-five: 80px;
-  --dl-space-six: 96px;
-
-  /* Colors */
-  --dl-primary-1: #BF4408;
-  --dl-primary-2: #E65103;
-  --dl-accent-1: #FFFFFF;
-  --dl-accent-2: #F5D1B0;
-  --dl-secondary-1: #FFFFFF;
-  --dl-secondary-2: #FBF1EB;
-  --dl-neutral-dark: #191818;
-  --dl-neutral-light: #FBFAF9;
-
-  /* Radii */
-  --dl-radius-round: 50%;
-  --dl-radius-2: 2px;
-  --dl-radius-4: 4px;
-  --dl-radius-8: 8px;
-  --dl-radius-card: 8px;
-  --dl-radius-image: 8px;
-  --dl-radius-input: 24px;
-  --dl-radius-button: 24px;
-}
-
-/* =========================
-   Base Elements
-========================= */
-body {
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--dl-neutral-dark);
-  background-color: var(--dl-neutral-light);
-  margin: 0;
-}
-
-.button,
-.thq-button-filled,
-.thq-button-outline,
-.thq-button-flat {
-  display: inline-flex;
+/* Container for quote */
+.quote-section {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: var(--dl-radius-button);
-  padding: var(--dl-space-half) var(--dl-space-one-and-half);
-  text-decoration: none;
-}
-
-.button,
-.input,
-.textarea,
-.thq-input,
-.thq-select {
-  border: 1px solid var(--dl-neutral-dark);
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  background-color: var(--dl-neutral-light);
-  color: var(--dl-neutral-dark);
-  outline: none;
-}
-
-.thq-input:focus {
-  outline: 1px solid var(--dl-primary-1);
-}
-
-/* =========================
-   Buttons
-========================= */
-.thq-button-filled {
-  background-color: var(--dl-primary-1);
-  color: var(--dl-secondary-1);
-  border: 1px solid var(--dl-primary-1);
-  gap: var(--dl-space-half);
-}
-
-.thq-button-filled:hover {
-  background-color: var(--dl-primary-2);
-  border-color: var(--dl-primary-2);
-  color: var(--dl-secondary-2);
-}
-
-/* Outline Button */
-.thq-button-outline {
-  background-color: transparent;
-  border: 1px solid var(--dl-primary-1);
-  color: var(--dl-primary-1);
-  gap: var(--dl-space-half);
-}
-
-.thq-button-outline:hover {
-  background-color: var(--dl-primary-2);
-  border-color: var(--dl-primary-2);
-  color: var(--dl-secondary-2);
-}
-
-/* Flat Button */
-.thq-button-flat {
-  border: none;
-  background-color: transparent;
-  color: var(--dl-primary-1);
-}
-
-.thq-button-flat:hover {
-  background-color: var(--dl-primary-2);
-  color: var(--dl-secondary-1);
-}
-
-/* =========================
-   Typography
-========================= */
-.thq-heading-1 { font-family: "STIX Two Text"; font-weight: 700; font-size: 48px; line-height: 1.5; }
-.thq-heading-2 { font-family: "STIX Two Text"; font-weight: 600; font-size: 35px; line-height: 1.5; }
-.thq-heading-3 { font-family: "STIX Two Text"; font-weight: 600; font-size: 26px; line-height: 1.5; }
-.thq-body-large { font-family: "Noto Sans"; font-size: 18px; line-height: 1.5; }
-.thq-body-small { font-family: "Noto Sans"; font-size: 16px; line-height: 1.5; }
-
-/* =========================
-   Images
-========================= */
-.thq-team-image-round { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; }
-.thq-img-ratio-1-1 { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--dl-radius-image); }
-.thq-img-scale { transition: transform 0.3s ease; }
-.thq-img-scale:hover { transform: scale(1.05); }
-
-/* =========================
-   Layouts & Grids
-========================= */
-.thq-section-padding { padding: var(--dl-space-five); width: 100%; display: flex; flex-direction: column; align-items: center; }
-.thq-section-max-width { max-width: var(--dl-max-width); width: 100%; }
-
-.thq-flex-column { display: flex; flex-direction: column; align-items: center; gap: var(--dl-space-two); }
-.thq-flex-row { display: flex; align-items: center; gap: var(--dl-space-two); }
-
-.thq-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--dl-space-two); }
-.thq-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--dl-space-two); }
-.thq-grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: var(--dl-space-two); }
-.thq-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--dl-space-two); }
-.thq-grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--dl-space-two); }
-
-/* Dynamic Gallery */
-#dynamic-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--dl-space-one);
-  width: 100%;
-  max-width: var(--dl-max-width);
+  text-align: center;
+  padding: var(--dl-space-four);
+  background-color: var(--dl-accent-2); /* subtle accent */
+  border-radius: var(--dl-radius-8);
+  max-width: 800px;
   margin: auto;
+  position: relative;
+  gap: var(--dl-space-two);
 }
 
-#dynamic-gallery img {
-  width: 100%;
-  border-radius: var(--dl-radius-image);
-  object-fit: cover;
-  transition: transform 0.3s ease;
+/* Quote text */
+.quote-text {
+  font-family: "STIX Two Text", serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--dl-neutral-dark);
+  position: relative;
+  padding: 0 var(--dl-space-two);
 }
 
-#dynamic-gallery img:hover {
-  transform: scale(1.05);
+/* Optional decorative quote icon */
+.quote-text::before {
+  content: "“";
+  font-size: 48px;
+  color: var(--dl-primary-1);
+  position: absolute;
+  left: -var(--dl-space-two);
+  top: -var(--dl-space-half);
 }
 
-/* =========================
-   Responsive
-========================= */
-@media(max-width: 991px) {
-  .thq-grid-4 { grid-template-columns: 1fr 1fr 1fr; }
+.quote-text::after {
+  content: "”";
+  font-size: 48px;
+  color: var(--dl-primary-1);
+  position: absolute;
+  right: -var(--dl-space-two);
+  bottom: -var(--dl-space-half);
 }
 
+/* Author/Attribution */
+.quote-author {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dl-neutral-dark);
+  margin-top: var(--dl-space-one);
+}
+
+/* Responsive Adjustments */
 @media(max-width: 767px) {
-  .thq-section-padding { padding: var(--dl-space-three); }
-  .thq-flex-column, .thq-flex-row { gap: var(--dl-space-one-and-half); }
-  .thq-grid-6, .thq-grid-5 { grid-template-columns: repeat(3, 1fr); gap: var(--dl-space-one-and-half); }
-  .thq-grid-3, .thq-grid-4 { grid-template-columns: repeat(2, 1fr); gap: var(--dl-space-one-and-half); }
-  .thq-grid-2 { grid-template-columns: 1fr; gap: var(--dl-space-one-and-half); }
+  .quote-text {
+    font-size: 20px;
+  }
+  .quote-text::before,
+  .quote-text::after {
+    font-size: 36px;
+  }
+  .quote-author {
+    font-size: 16px;
+  }
 }
 
 @media(max-width: 479px) {
-  .thq-section-padding { padding: var(--dl-space-one-and-half); }
-  .thq-flex-column, .thq-flex-row { gap: var(--dl-space-one); }
-  .thq-grid-6, .thq-grid-5 { grid-template-columns: repeat(2, 1fr); gap: var(--dl-space-one); }
-  .thq-grid-4, .thq-grid-3, .thq-grid-2 { grid-template-columns: 1fr; gap: var(--dl-space-one); }
-  #dynamic-gallery { grid-template-columns: 1fr; }
+  .quote-section {
+    padding: var(--dl-space-three);
+  }
+  .quote-text {
+    font-size: 18px;
+  }
+  .quote-text::before,
+  .quote-text::after {
+    font-size: 28px;
+  }
 }
