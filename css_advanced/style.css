@@ -1,118 +1,264 @@
 /* =========================
-   FAQ Section
+   Root Variables
 ========================= */
+:root {
+  --dl-layout-size-xsmall: 16px;
+  --dl-layout-size-small: 48px;
+  --dl-layout-size-medium: 96px;
+  --dl-layout-size-large: 144px;
+  --dl-layout-size-xlarge: 192px;
+  --dl-layout-size-xxlarge: 288px;
+  --dl-layout-size-maxwidth: 1400px;
 
-/* Container for FAQ */
-.faq {
+  --dl-layout-space-halfunit: 8px;
+  --dl-layout-space-unit: 16px;
+  --dl-layout-space-two: 32px;
+  --dl-layout-space-threeunits: 48px;
+  --dl-layout-space-fourunits: 64px;
+  --dl-layout-space-fiveunits: 80px;
+  --dl-layout-space-sixunits: 96px;
+  --dl-layout-space-oneandhalfunits: 24px;
+
+  --dl-layout-radius-round: 50%;
+  --dl-layout-radius-radius2: 2px;
+  --dl-layout-radius-radius4: 4px;
+  --dl-layout-radius-radius8: 8px;
+  --dl-layout-radius-cardradius: 8px;
+  --dl-layout-radius-imageradius: 8px;
+  --dl-layout-radius-inputradius: 24px;
+  --dl-layout-radius-buttonradius: 24px;
+
+  --dl-color-theme-primary1: #BF4408;
+  --dl-color-theme-primary2: #E65103;
+  --dl-color-theme-accent1: #FFFFFF;
+  --dl-color-theme-accent2: #F5D1B0;
+  --dl-color-theme-secondary1: #FFFFFF;
+  --dl-color-theme-secondary2: #FBF1EB;
+  --dl-color-theme-neutral-dark: #191818;
+  --dl-color-theme-neutral-light: #FBFAF9;
+}
+
+/* =========================
+   Global Styles
+========================= */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--dl-color-theme-neutral-dark);
+  background-color: var(--dl-color-theme-neutral-light);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+h1, h2, h3 {
+  font-family: "STIX Two Text", serif;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   Quote Section
+========================= */
+.quote-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--dl-layout-space-fiveunits);
-  background-color: var(--dl-color-theme-neutral-light);
-  gap: var(--dl-layout-space-twounits);
+  text-align: center;
+  padding: var(--dl-layout-space-fourunits);
+  background-color: var(--dl-color-theme-accent2);
+  border-radius: var(--dl-layout-radius-radius8);
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  gap: var(--dl-layout-space-two);
 }
 
-/* FAQ Heading */
-.faq h2 {
+.quote-text {
   font-family: "STIX Two Text", serif;
-  font-size: 35px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--dl-color-theme-neutral-dark);
+  position: relative;
+  padding: 0 var(--dl-layout-space-two);
+}
+
+.quote-text::before {
+  content: "“";
+  font-size: 48px;
+  color: var(--dl-color-theme-primary1);
+  position: absolute;
+  left: -var(--dl-layout-space-two);
+  top: -var(--dl-layout-space-halfunit);
+}
+
+.quote-text::after {
+  content: "”";
+  font-size: 48px;
+  color: var(--dl-color-theme-primary1);
+  position: absolute;
+  right: -var(--dl-layout-space-two);
+  bottom: -var(--dl-layout-space-halfunit);
+}
+
+.quote-author {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dl-color-theme-neutral-dark);
+  margin-top: var(--dl-layout-space-oneandhalfunits);
+}
+
+/* =========================
+   Membership Section
+========================= */
+.membership {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--dl-layout-space-fiveunits);
+  background-color: var(--dl-color-theme-accent1);
+  gap: var(--dl-layout-space-two);
+}
+
+.membership h2 {
+  font-family: "STIX Two Text", serif;
+  font-size: 32px;
   font-weight: 600;
   color: var(--dl-color-theme-neutral-dark);
-  margin-bottom: var(--dl-layout-space-twounits);
+}
+
+.membership .features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--dl-layout-space-two);
+  margin-top: var(--dl-layout-space-two);
+}
+
+.membership .features div {
+  display: flex;
+  align-items: center;
+  gap: var(--dl-layout-space-halfunit);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dl-color-theme-neutral-dark);
+}
+
+/* =========================
+   FAQ Section
+========================= */
+.faq {
+  padding: var(--dl-layout-space-fiveunits);
+  max-width: var(--dl-layout-size-maxwidth);
+  margin: auto;
+}
+
+.faq h2 {
+  font-family: "STIX Two Text", serif;
+  font-size: 32px;
+  font-weight: 600;
   text-align: center;
+  margin-bottom: var(--dl-layout-space-two);
 }
 
-/* Each FAQ item */
 .faq details {
-  width: 100%;
-  max-width: 800px;
+  margin-bottom: var(--dl-layout-space-oneandhalfunits);
+  padding: var(--dl-layout-space-unit);
+  border-radius: var(--dl-layout-radius-radius4);
   background-color: var(--dl-color-theme-accent2);
-  padding: var(--dl-layout-space-twounits);
-  margin-bottom: var(--dl-layout-space-unit);
-  border-radius: var(--dl-layout-radius-radius8);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.3s ease;
 }
 
-/* Hover effect */
-.faq details:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.faq details[open] {
+  background-color: var(--dl-color-theme-accent1);
 }
 
-/* FAQ summary */
 .faq summary {
   font-family: "STIX Two Text", serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: var(--dl-color-theme-primary1);
-  list-style: none; /* remove default arrow */
+  list-style: none;
   outline: none;
 }
 
-/* Custom arrow using pseudo-element */
-.faq summary::marker {
-  content: '';
-}
-
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq summary::after {
-  content: '▼';
-  float: right;
-  transition: transform 0.3s ease;
-}
-
-/* Rotate arrow when open */
-.faq details[open] summary::after {
-  transform: rotate(180deg);
-}
-
-/* FAQ content */
 .faq p {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  color: var(--dl-color-theme-neutral-dark);
-  margin-top: var(--dl-layout-space-unit);
+  font-weight: 400;
+  margin-top: var(--dl-layout-space-halfunit);
 }
 
-/* Responsive adjustments */
+/* =========================
+   Footer Section
+========================= */
+footer {
+  width: 100%;
+  background-color: var(--dl-color-theme-neutral-dark);
+  color: var(--dl-color-theme-secondary1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--dl-layout-space-fourunits);
+  gap: var(--dl-layout-space-twounits);
+}
+
+footer p {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+footer .socials {
+  display: flex;
+  gap: var(--dl-layout-space-twounits);
+  align-items: center;
+  justify-content: center;
+}
+
+footer .socials img {
+  width: var(--dl-layout-size-medium);
+  height: var(--dl-layout-size-medium);
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+footer .socials img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 767px) {
-  .faq h2 {
-    font-size: 28px;
-  }
-
-  .faq details {
-    padding: var(--dl-layout-space-oneandhalfunits);
-  }
-
-  .faq summary {
-    font-size: 18px;
-  }
-
-  .faq p {
-    font-size: 14px;
-  }
+  .quote-text { font-size: 20px; }
+  .quote-text::before, .quote-text::after { font-size: 36px; }
+  .quote-author { font-size: 16px; }
+  footer p { font-size: 13px; }
+  footer .socials img { width: var(--dl-layout-size-small); height: var(--dl-layout-size-small); }
 }
 
 @media (max-width: 479px) {
-  .faq h2 {
-    font-size: 24px;
-  }
-
-  .faq details {
-    padding: var(--dl-layout-space-unit);
-  }
-
-  .faq summary {
-    font-size: 16px;
-  }
-
-  .faq p {
-    font-size: 14px;
-  }
+  .quote-section { padding: var(--dl-layout-space-threeunits); }
+  .quote-text { font-size: 18px; }
+  .quote-text::before, .quote-text::after { font-size: 28px; }
+  .membership { padding: var(--dl-layout-space-threeunits); }
+  footer { padding: var(--dl-layout-space-threeunits); }
+  footer p { font-size: 12px; }
+  footer .socials { gap: var(--dl-layout-space-oneandhalfunits); }
+  footer .socials img { width: var(--dl-layout-size-xsmall); height: var(--dl-layout-size-xsmall); }
 }
