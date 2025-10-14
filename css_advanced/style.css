@@ -1,50 +1,118 @@
 /* =========================
-   Quote Section
+   FAQ Section
 ========================= */
 
-/* Container for the quote */
-.quote-section {
+/* Container for FAQ */
+.faq {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: var(--dl-layout-space-fourunits);
-  background-color: var(--dl-color-theme-accent2);
-  border-radius: var(--dl-layout-radius-radius8);
-  max-width: 800px;
-  margin: auto;
-  position: relative;
+  padding: var(--dl-layout-space-fiveunits);
+  background-color: var(--dl-color-theme-neutral-light);
   gap: var(--dl-layout-space-twounits);
 }
 
-/* Quote text */
-.quote-text {
+/* FAQ Heading */
+.faq h2 {
   font-family: "STIX Two Text", serif;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 600;
-  line-height: 1.6;
   color: var(--dl-color-theme-neutral-dark);
-  position: relative;
-  padding: 0 var(--dl-layout-space-twounits);
+  margin-bottom: var(--dl-layout-space-twounits);
+  text-align: center;
 }
 
-/* Decorative quote marks */
-.quote-text::before {
-  content: "“";
-  font-size: 48px;
+/* Each FAQ item */
+.faq details {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--dl-color-theme-accent2);
+  padding: var(--dl-layout-space-twounits);
+  margin-bottom: var(--dl-layout-space-unit);
+  border-radius: var(--dl-layout-radius-radius8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.faq details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ summary */
+.faq summary {
+  font-family: "STIX Two Text", serif;
+  font-size: 20px;
+  font-weight: 600;
   color: var(--dl-color-theme-primary1);
-  position: absolute;
-  left: -var(--dl-layout-space-twounits);
-  top: -var(--dl-layout-space-halfunit);
+  list-style: none; /* remove default arrow */
+  outline: none;
 }
 
-.quote-text::after {
-  content: "”";
-  font-size: 48px;
-  color: var(--dl-color-theme-primary1);
-  position: absolute;
-  right: -var(--dl-layout-space-twounits);
-  bottom: -var(--dl-layout-space-halfunit);
+/* Custom arrow using pseudo-element */
+.faq summary::marker {
+  content: '';
 }
 
-/* Author / Attri*
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '▼';
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.faq details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* FAQ content */
+.faq p {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dl-color-theme-neutral-dark);
+  margin-top: var(--dl-layout-space-unit);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .faq h2 {
+    font-size: 28px;
+  }
+
+  .faq details {
+    padding: var(--dl-layout-space-oneandhalfunits);
+  }
+
+  .faq summary {
+    font-size: 18px;
+  }
+
+  .faq p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 479px) {
+  .faq h2 {
+    font-size: 24px;
+  }
+
+  .faq details {
+    padding: var(--dl-layout-space-unit);
+  }
+
+  .faq summary {
+    font-size: 16px;
+  }
+
+  .faq p {
+    font-size: 14px;
+  }
+}
