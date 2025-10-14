@@ -8,13 +8,13 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--dl-space-four);
-  background-color: var(--dl-accent-2); /* subtle accent */
-  border-radius: var(--dl-radius-8);
+  padding: var(--dl-layout-space-fourunits);
+  background-color: var(--dl-color-theme-accent2);
+  border-radius: var(--dl-layout-radius-radius8);
   max-width: 800px;
   margin: auto;
   position: relative;
-  gap: var(--dl-space-two);
+  gap: var(--dl-layout-space-twounits);
 }
 
 /* Quote text */
@@ -23,28 +23,28 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 1.6;
-  color: var(--dl-neutral-dark);
+  color: var(--dl-color-theme-neutral-dark);
   position: relative;
-  padding: 0 var(--dl-space-two);
+  padding: 0 var(--dl-layout-space-twounits);
 }
 
-/* Optional decorative quote icon */
+/* Decorative quote marks */
 .quote-text::before {
   content: "“";
   font-size: 48px;
-  color: var(--dl-primary-1);
+  color: var(--dl-color-theme-primary1);
   position: absolute;
-  left: -var(--dl-space-two);
-  top: -var(--dl-space-half);
+  left: -var(--dl-layout-space-twounits);
+  top: -var(--dl-layout-space-halfunit);
 }
 
 .quote-text::after {
   content: "”";
   font-size: 48px;
-  color: var(--dl-primary-1);
+  color: var(--dl-color-theme-primary1);
   position: absolute;
-  right: -var(--dl-space-two);
-  bottom: -var(--dl-space-half);
+  right: -var(--dl-layout-space-twounits);
+  bottom: -var(--dl-layout-space-halfunit);
 }
 
 /* Author/Attribution */
@@ -52,12 +52,12 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: var(--dl-neutral-dark);
-  margin-top: var(--dl-space-one);
+  color: var(--dl-color-theme-neutral-dark);
+  margin-top: var(--dl-layout-space-oneandhalfunits);
 }
 
 /* Responsive Adjustments */
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .quote-text {
     font-size: 20px;
   }
@@ -70,9 +70,9 @@
   }
 }
 
-@media(max-width: 479px) {
+@media (max-width: 479px) {
   .quote-section {
-    padding: var(--dl-space-three);
+    padding: var(--dl-layout-space-threeunits);
   }
   .quote-text {
     font-size: 18px;
