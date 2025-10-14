@@ -1,6 +1,5 @@
 # alx_html_css
 
-
 # My Website Project
 
 This is a simple website project with HTML and CSS.
