@@ -2,7 +2,7 @@
    Quote Section
 ========================= */
 
-/* Container for quote */
+/* Container for the quote */
 .quote-section {
   display: flex;
   flex-direction: column;
@@ -47,38 +47,4 @@
   bottom: -var(--dl-layout-space-halfunit);
 }
 
-/* Author/Attribution */
-.quote-author {
-  font-family: "Noto Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--dl-color-theme-neutral-dark);
-  margin-top: var(--dl-layout-space-oneandhalfunits);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-  .quote-text {
-    font-size: 20px;
-  }
-  .quote-text::before,
-  .quote-text::after {
-    font-size: 36px;
-  }
-  .quote-author {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 479px) {
-  .quote-section {
-    padding: var(--dl-layout-space-threeunits);
-  }
-  .quote-text {
-    font-size: 18px;
-  }
-  .quote-text::before,
-  .quote-text::after {
-    font-size: 28px;
-  }
-}
+/* Author / Attri*
